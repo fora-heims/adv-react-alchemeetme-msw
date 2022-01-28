@@ -15,7 +15,7 @@ const user = {
 }
 
 const server = setupServer(
-  rest.get('https://qkcxujpxxrpvgladdjtz.supabase.co/rest/v1/users?select=*', (req, res, ctx) => {
+  rest.get('https://qkcxujpxxrpvgladdjtz.supabase.co/rest/v1/users', (req, res, ctx) => {
     const select = req.url.searchParams.get('select')
     if (select === '*') {
       return res(ctx.json([user]))
